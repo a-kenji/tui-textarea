@@ -4,10 +4,10 @@ use crossterm::terminal::{
 };
 use std::cmp;
 use std::io;
-use tui::backend::CrosstermBackend;
-use tui::layout::{Constraint, Direction, Layout};
-use tui::widgets::{Block, Borders};
-use tui::Terminal;
+use ratatui::backend::CrosstermBackend;
+use ratatui::layout::{Constraint, Direction, Layout};
+use ratatui::widgets::{Block, Borders};
+use ratatui::Terminal;
 use tui_textarea::{Input, Key, TextArea};
 
 fn main() -> io::Result<()> {

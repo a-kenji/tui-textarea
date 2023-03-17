@@ -2,17 +2,17 @@ use crate::textarea::TextArea;
 use crate::util::num_digits;
 use std::cmp;
 use std::sync::atomic::{AtomicU64, Ordering};
-use tui::buffer::Buffer;
-use tui::layout::Rect;
-use tui::text::Text;
-use tui::widgets::{Paragraph, Widget};
+use ratatui::buffer::Buffer;
+use ratatui::layout::Rect;
+use ratatui::text::Text;
+use ratatui::widgets::{Paragraph, Widget};
 
 // &mut 'a (u16, u16, u16, u16) is not available since Renderer instance totally takes over the ownership of TextArea
 // instance. In the case, the TextArea instance cannot be accessed from any other objects since it is mutablly
 // borrowed.
 //
-// `tui::terminal::Frame::render_stateful_widget` would be an assumed way to render a stateful widget. But at this
-// point we stick with using `tui::terminal::Frame::render_widget` because it is simpler API. Users don't need to
+// `ratatui::terminal::Frame::render_stateful_widget` would be an assumed way to render a stateful widget. But at this
+// point we stick with using `ratatui::terminal::Frame::render_widget` because it is simpler API. Users don't need to
 // manage states of textarea instances separately.
 // https://docs.rs/tui/latest/tui/terminal/struct.Frame.html#method.render_stateful_widget
 #[derive(Default)]

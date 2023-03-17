@@ -23,15 +23,16 @@ include = [
 
 [features]
 default = ["crossterm"]
-crossterm = ["dep:crossterm", "tui/crossterm"]
-termion = ["dep:termion", "tui/termion"]
+crossterm = ["dep:crossterm", "ratatui/crossterm"]
+termion = ["dep:termion", "ratatui/termion"]
 search = ["dep:regex"]
 
 [dependencies]
 crossterm = { version = "0.25", optional = true }
 regex = { version = "1", optional = true }
 termion = { version = "1.5", optional = true }
-tui = { version = "0.19", default-features = false }
+# tui = { version = "0.19", default-features = false }
+ratatui = { git = "https://github.com/tui-rs-revival/ratatui", default-features = false }
 arbitrary = { version = "1", features = ["derive"], optional = true }
 
 [[example]]

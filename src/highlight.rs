@@ -1,8 +1,8 @@
 use crate::util::{num_digits, spaces};
 use std::borrow::Cow;
 use std::cmp::Ordering;
-use tui::style::Style;
-use tui::text::{Span, Spans};
+use ratatui::style::Style;
+use ratatui::text::{Span, Spans};
 
 enum Boundary {
     Cursor(Style),

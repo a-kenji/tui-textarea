@@ -1,5 +1,5 @@
 use regex::Regex;
-use tui::style::{Color, Style};
+use ratatui::style::{Color, Style};
 
 #[derive(Clone)]
 pub struct Search {

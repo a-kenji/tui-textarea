@@ -123,7 +123,7 @@ tui-textarea = { version = "*", default-features = false, features = ["termion"]
 use tui_textarea::TextArea;
 use crossterm::event::{Event, read};
 
-let mut term = tui::Terminal::new(...);
+let mut term = ratatui::Terminal::new(...);
 
 // Create an empty `TextArea` instance which manages the editor state
 let mut textarea = TextArea::default();
@@ -131,7 +131,7 @@ let mut textarea = TextArea::default();
 // Event loop
 loop {
     term.draw(|f| {
-        // Get `tui::layout::Rect` where the editor should be rendered
+        // Get `ratatui::layout::Rect` where the editor should be rendered
         let rect = ...;
         // `TextArea::widget` builds a widget to render the editor with tui
         let widget = textarea.widget();
@@ -267,7 +267,7 @@ By default, `TextArea` does now show line numbers. To enable, set a style for re
 color.
 
 ```rust
-use tui::style::{Style, Color};
+use ratatui::style::{Style, Color};
 
 let style = Style::default().bg(Color::DarkGray);
 textarea.set_line_number_style(style);
@@ -280,7 +280,7 @@ is. To change the style of cursor line, use `TextArea::set_cursor_line_style()`.
 cursor line with bold text.
 
 ```rust
-use tui::style::{Style, Modifier};
+use ratatui::style::{Style, Modifier};
 
 let style = Style::default().add_modifier(Modifier::BOLD);
 textarea.set_line_number_style(style);
@@ -289,7 +289,7 @@ textarea.set_line_number_style(style);
 To disable cursor line style, set the default style as follows:
 
 ```rust
-use tui::style::{Style, Modifier};
+use ratatui::style::{Style, Modifier};
 
 textarea.set_line_number_style(Style::default());
 ```
@@ -488,7 +488,7 @@ match read()?.into() {
 
 ### Use your own backend
 
-tui-rs allows to make your own backend by implementing [`tui::backend::Backend`][tui-backend] trait. tui-textarea also
+tui-rs allows to make your own backend by implementing [`ratatui::backend::Backend`][tui-backend] trait. tui-textarea also
 supports it. In the case, support for neither crossterm nor termion is necessary.
 
 ```toml
