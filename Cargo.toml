@@ -32,7 +32,8 @@ crossterm = { version = "0.26", optional = true }
 regex = { version = "1", optional = true }
 termion = { version = "1.5", optional = true }
 # tui = { version = "0.19", default-features = false }
-ratatui = { git = "https://github.com/tui-rs-revival/ratatui", default-features = false }
+# ratatui = { version = "https://github.com/tui-rs-revival/ratatui", default-features = false }
+ratatui = { version = "0.23.0", default-features = false }
 arbitrary = { version = "1", features = ["derive"], optional = true }
 
 [[example]]
